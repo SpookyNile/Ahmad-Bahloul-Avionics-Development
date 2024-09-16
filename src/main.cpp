@@ -1,7 +1,6 @@
 #include <Arduino.h>
 #include <HardwareSerial.h>
 #include <TinyGPS++.h>
-
 #define RXD2 16 //Defining the pins
 #define TXD2 17
 
