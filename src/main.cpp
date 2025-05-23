@@ -1,35 +1,85 @@
-#include <Arduino.h>
-#include <HardwareSerial.h>
-#include <TinyGPS++.h>
-#include <MPU.cpp>
+#include <TinyGPSPlus.h>
 
 
-#define RXD2 16 //Defining the pins
-#define TXD2 17
+static const uint32_t GPSBaud = 9600; //Beitian BN220 communicates over 9600
 
-
-HardwareSerial SerialGPS(2); //accessing UART 2 with the HardwareSerial Library
+// The TinyGPSPlus object
 TinyGPSPlus gps;
 
-void setup(){
+void displayInfo()
+{
+  Serial.print(F("Location: ")); 
+  if (gps.location.isValid())
+  {
+    Serial.print(gps.location.lat(), 6);
+    Serial.print(F(","));
+    Serial.print(gps.location.lng(), 6);
+  }
+  else
+  {
+    Serial.print(F("INVALID"));
+  }
 
- setupMPU();
- Serial.begin(9600); // Start serial communication with the PC and initialize Serial Monitor
- SerialGPS.begin(9600,SERIAL_8N1,RXD2,TXD2);  //Start serial communication with the GPS module with UART2, RXD2=GPIO 16, TXD2=GPIO 17
+  Serial.print(F("  Date/Time: "));
+  if (gps.date.isValid())
+  {
+    Serial.print(gps.date.month());
+    Serial.print(F("/"));
+    Serial.print(gps.date.day());
+    Serial.print(F("/"));
+    Serial.print(gps.date.year());
+  }
+  else
+  {
+    Serial.print(F("INVALID"));
+  }
+
+  Serial.print(F(" "));
+  if (gps.time.isValid())
+  {
+    if (gps.time.hour() < 10) Serial.print(F("0"));
+    Serial.print(gps.time.hour());
+    Serial.print(F(":"));
+    if (gps.time.minute() < 10) Serial.print(F("0"));
+    Serial.print(gps.time.minute());
+    Serial.print(F(":"));
+    if (gps.time.second() < 10) Serial.print(F("0"));
+    Serial.print(gps.time.second());
+    Serial.print(F("."));
+    if (gps.time.centisecond() < 10) Serial.print(F("0"));
+    Serial.print(gps.time.centisecond());
+  }
+  else
+  {
+    Serial.print(F("INVALID"));
+  }
+
+  Serial.println();
 }
 
-void loop() { //Choose Serial1 or Serial2 as required
-  // while (SerialGPS.available() >0) {
-  //   gps.encode(SerialGPS.read());
-  //   //Serial.print(char(SerialGPS.read())); //Problem was here, we were printing data in Serial0 (our serial Monitor) from 'Serial2' instead of the defined object 'SerialGPS'. Never caught it because Serial2 was defined within HardwareSerial so it never gave an error.
-  // }
+void setup()
+{
+  Serial.begin(115200);
+  Serial2.begin(GPSBaud); //GPS is connected to RX2 and TX2, hence the use of Serial2
 
-  // Serial.print("LAT=");  Serial.println(gps.location.lat(), 6);
-  // Serial.print("SAT="); Serial.println(gps.satellites.value());
-  // Serial.print("LONG="); Serial.println(gps.location.lng(), 6);
-  // Serial.print("ALT=");  Serial.println(gps.altitude.meters());
-  // Serial.print("HDOP="); Serial.println(gps.hdop.value());
-  // delay(1000); //delay for 1000 milliseconds
-
-  MPU();
+  Serial.println(F("DeviceExample.ino"));
+  Serial.println(F("A simple demonstration of TinyGPSPlus with an attached GPS module"));
+  Serial.print(F("Testing TinyGPSPlus library v. ")); Serial.println(TinyGPSPlus::libraryVersion());
+  Serial.println(F("by Mikal Hart"));
+  Serial.println();
 }
+
+void loop()
+{
+  // This sketch displays information every time a new sentence is correctly encoded.
+  while (Serial2.available() > 0)
+    if (gps.encode(Serial2.read()))
+      displayInfo();
+
+  if (millis() > 5000 && gps.charsProcessed() < 10)
+  {
+    Serial.println(F("No GPS detected: check wiring."));
+    while(true);
+  }
+}
+
