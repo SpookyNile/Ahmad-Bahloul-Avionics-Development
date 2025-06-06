@@ -1,6 +1,5 @@
 #include <Arduino.h>
-#include <LoRa.h>
-#include <SPI.h>
+
 
 #include <mpu.h>
 #include <gps.h>
