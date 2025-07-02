@@ -1,0 +1,6 @@
+"Reference","Value","Datasheet","Footprint","Qty","DNP"
+"BN220","Conn_01x04","~","Connector_JST:JST_SH_BM04B-SRSS-TB_1x04-1MP_P1.00mm_Vertical","1",""
+"RYLR998Conn1","Conn_01x05","~","Connector_PinSocket_1.00mm:PinSocket_1x05_P1.00mm_Vertical","1",""
+"U1","MS5611-01BA","https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=MS5611-01BA03&DocType=Data+Sheet&DocLang=English","Package_LGA:LGA-8_3x5mm_P1.25mm","1",""
+"U2","ESP32-WROOM-32","https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf","RF_Module:ESP32-WROOM-32","1",""
+"U3","MPU-6050","https://invensense.tdk.com/wp-content/uploads/2015/02/MPU-6000-Datasheet1.pdf","Sensor_Motion:InvenSense_QFN-24_4x4mm_P0.5mm","1",""
