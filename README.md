@@ -14,8 +14,8 @@ Brainstorm, design, construct and revise a flight computer for high power rocket
 - Use data to have velocity and position predictions accurately
 
 ## Hardware
-**MCU**: ESP32-WROOM-32  
+**MCU**: ESP32-S3-WROOM-1
 **MPU**: MPU6050  
 **LoRa**: REYAX RYLR998  
 **GPS**: Beitian Dual BN-220  
-**Pressure & Temperature Sensor**: GY-63 MS5611  
+**Pressure & Temperature Sensor**: MS5611  
