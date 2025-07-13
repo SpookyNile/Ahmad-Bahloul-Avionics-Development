@@ -10470,7 +10470,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 138.43 111.76 0)
 			(effects
 				(font
@@ -10604,7 +10604,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 163.83 101.6 0)
 			(effects
 				(font
@@ -10671,7 +10671,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 138.43 106.68 0)
 			(effects
 				(font
@@ -10936,7 +10936,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 138.43 96.52 0)
 			(effects
 				(font
@@ -11070,7 +11070,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 138.43 101.6 0)
 			(effects
 				(font
@@ -11410,7 +11410,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
 			(at 200.66 107.95 0)
 			(effects
 				(font
@@ -11474,7 +11474,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
 			(at 200.66 113.03 0)
 			(effects
 				(font
@@ -11869,7 +11869,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_THT:SW_PUSH_1P1T_6x3.5mm_H4.3_APEM_MJTP1243"
 			(at 149.86 176.53 0)
 			(effects
 				(font
@@ -14251,7 +14251,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_THT:SW_PUSH_1P1T_6x3.5mm_H4.3_APEM_MJTP1243"
 			(at 149.86 198.12 0)
 			(effects
 				(font
@@ -14588,7 +14588,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
 			(at 200.66 97.79 0)
 			(effects
 				(font
@@ -14868,7 +14868,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 138.43 116.84 0)
 			(effects
 				(font
@@ -15001,7 +15001,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
 			(at 200.66 102.87 0)
 			(effects
 				(font
@@ -16018,7 +16018,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 163.83 96.52 0)
 			(effects
 				(font
